@@ -1,7 +1,7 @@
 Summary: Determine and mark up significant differences between latex files
 Name: latexdiff
 Version: 0.5
-Release: %mkrel 2
+Release: %mkrel 3
 URL: http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=latexdiff
 Source: http://tug.ctan.org/cgi-bin/getFile.py?fn=/systems/win32/miktex/tm/packages/latexdiff.tar.bz2
 License: GPLv2
