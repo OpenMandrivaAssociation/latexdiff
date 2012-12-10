@@ -55,3 +55,25 @@ rm -rf %{buildroot}
 %attr(644,root,root) %{_mandir}/man1/latexdiff.1*
 %attr(644,root,root) %{_mandir}/man1/latexdiff-vc.1*
 %attr(644,root,root) %{_mandir}/man1/latexrevise.1*
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 0.5-4mdv2011.0
++ Revision: 620050
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 11 2009 Thierry Vignaud <tv@mandriva.org> 0.5-3mdv2010.0
++ Revision: 438178
+- rebuild
+
+* Fri Feb 06 2009 Giuseppe Ghibò <ghibo@mandriva.com> 0.5-2mdv2009.1
++ Revision: 338177
+- Fix permissions (rpmlint-aware).
+- Add examples to docs.
+- Fix Requires for older releases.
+
+* Sun Jan 11 2009 Jérôme Soyer <saispo@mandriva.org> 0.5-1mdv2009.1
++ Revision: 328365
+- import latexdiff
+
+
