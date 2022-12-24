@@ -1,13 +1,13 @@
-Summary: Determine and mark up significant differences between latex files
-Name: latexdiff
-Version: 1.3.1.1
-Release: 1
-URL: https://ctan.org/pkg/latexdiff
-Source: http://mirrors.ctan.org/support/latexdiff.zip
-License: GPLv2
-Group: Text tools
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: tex(latex)
+Summary:	Determine and mark up significant differences between latex files
+Name:		latexdiff
+Version:	1.3.3
+Release:	1
+URL:		https://ctan.org/pkg/latexdiff
+Source:		https://mirrors.ctan.org/support/latexdiff.zip
+License:	GPLv2
+Group:		Text tools
+Requires:	tex(latex)
+
 BuildArch: noarch
 
 %description
@@ -20,6 +20,20 @@ rudimentary revision facility is provided by another Perl script,
 latexrevise, which accepts or rejects all changes.  Manual editing of
 the difference file can be used to override this default behaviour and
 accept or reject selected changes only.
+
+%files
+%defattr(-,root,root,-)
+%doc doc/* example
+%attr(755,root,root) %{_bindir}/latexdiff
+%attr(755,root,root) %{_bindir}/latexdiff-fast
+%attr(755,root,root) %{_bindir}/latexdiff-so
+%attr(755,root,root) %{_bindir}/latexdiff-vc
+%attr(755,root,root) %{_bindir}/latexrevise
+%attr(644,root,root) %{_mandir}/man1/latexdiff.1*
+%attr(644,root,root) %{_mandir}/man1/latexdiff-vc.1*
+%attr(644,root,root) %{_mandir}/man1/latexrevise.1*
+
+#--------------------------------------------------------------------
 
 %prep
 %autosetup -p1 -n latexdiff
@@ -37,14 +51,3 @@ cp -p latexrevise %{buildroot}/%{_bindir}/latexrevise
 cp -p *.1 %{buildroot}/%{_mandir}/man1
 chmod 644 %{buildroot}/%{_mandir}/man1/*
 
-%files
-%defattr(-,root,root,-)
-%doc doc/* example
-%attr(755,root,root) %{_bindir}/latexdiff
-%attr(755,root,root) %{_bindir}/latexdiff-fast
-%attr(755,root,root) %{_bindir}/latexdiff-so
-%attr(755,root,root) %{_bindir}/latexdiff-vc
-%attr(755,root,root) %{_bindir}/latexrevise
-%attr(644,root,root) %{_mandir}/man1/latexdiff.1*
-%attr(644,root,root) %{_mandir}/man1/latexdiff-vc.1*
-%attr(644,root,root) %{_mandir}/man1/latexrevise.1*
