@@ -1,3 +1,5 @@
+# NOTE: this package is obsolete. Use texlive-latexdiff instead.
+
 Summary:	Determine and mark up significant differences between latex files
 Name:		latexdiff
 Version:	1.3.3
@@ -22,16 +24,16 @@ the difference file can be used to override this default behaviour and
 accept or reject selected changes only.
 
 %files
-%defattr(-,root,root,-)
+%license COPYING
 %doc doc/* example
-%attr(755,root,root) %{_bindir}/latexdiff
-%attr(755,root,root) %{_bindir}/latexdiff-fast
-%attr(755,root,root) %{_bindir}/latexdiff-so
-%attr(755,root,root) %{_bindir}/latexdiff-vc
-%attr(755,root,root) %{_bindir}/latexrevise
-%attr(644,root,root) %{_mandir}/man1/latexdiff.1*
-%attr(644,root,root) %{_mandir}/man1/latexdiff-vc.1*
-%attr(644,root,root) %{_mandir}/man1/latexrevise.1*
+%{_bindir}/latexdiff
+%{_bindir}/latexdiff-fast
+%{_bindir}/latexdiff-so
+%{_bindir}/latexdiff-vc
+%{_bindir}/latexrevise
+%{_mandir}/man1/latexdiff.1*
+%{_mandir}/man1/latexdiff-vc.1*
+%{_mandir}/man1/latexrevise.1*
 
 #--------------------------------------------------------------------
 
@@ -41,13 +43,9 @@ accept or reject selected changes only.
 %build
 
 %install
-mkdir -p %{buildroot}/%{_bindir} \
-	%{buildroot}/%{_mandir}/man1
-cp -p latexdiff %{buildroot}/%{_bindir}/latexdiff
-cp -p latexdiff-fast %{buildroot}/%{_bindir}/latexdiff-fast
-cp -p latexdiff-so %{buildroot}/%{_bindir}/latexdiff-so
-cp -p latexdiff-vc %{buildroot}/%{_bindir}/latexdiff-vc
-cp -p latexrevise %{buildroot}/%{_bindir}/latexrevise
-cp -p *.1 %{buildroot}/%{_mandir}/man1
-chmod 644 %{buildroot}/%{_mandir}/man1/*
+install -pm 0755 -d %{buildroot}/%{_bindir}
+install -pm 0755 latexdiff latexdiff-fast latexdiff-so latexdiff-vc latexrevise %{buildroot}/%{_bindir}
+
+install -pm 0755 -d %{buildroot}/%{_mandir}/man1
+install -pm 0644 *.1 %{buildroot}/%{_mandir}/man1
 
