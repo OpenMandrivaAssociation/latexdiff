@@ -2,7 +2,7 @@
 
 Summary:	Determine and mark up significant differences between latex files
 Name:		latexdiff
-Version:	1.3.3
+Version:	1.3.4
 Release:	1
 URL:		https://ctan.org/pkg/latexdiff
 Source:		https://mirrors.ctan.org/support/latexdiff.zip
